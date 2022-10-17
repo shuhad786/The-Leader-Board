@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script
+      src="https://kit.fontawesome.com/8a3c9493da.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <h1 class="header" Heading="Leader Board">Leader Board</h1>
+    <div class="page">
+      <div class="scoreDisplay">
+        <div class="scoreBoard">
+          <h2 class="recentScoresHeader">Recent Scores</h2>
+          <button class="refreshBtn">Refresh</button>
+        </div>
+        <div id="scoreBoardContainer" class="scoreBoardContainer"></div>
+      </div>
+      <form method="post" class="entryContainer">
+        <h2 class="addYourScoreHeader">Add your score</h2>
+        <input
+          id="nameInput"
+          class="nameInput"
+          type="text"
+          placeholder="Your name here"
+        />
+        <input
+          id="scoreInput"
+          class="scoreInput"
+          type="text"
+          placeholder="Your score here"
+        />
+        <button id="submitBtn" class="submitBtn" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
