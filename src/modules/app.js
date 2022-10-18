@@ -1,40 +1,30 @@
-const data = [
-  {
-    name: 'first',
-    score: '1',
-  },
-  {
-    name: 'second',
-    score: '3',
-  },
-  {
-    name: 'bye',
-    score: '10',
-  },
-  {
-    name: 'winner',
-    score: '4',
-  },
-  {
-    name: 'oh yes',
-    score: '2',
-  },
-];
+import { postRequest, getResponse } from './useHTTP.js';
 
-const displayList = () => {
-  const sortedData = data.sort((a, b) => a.score - b.score);
+const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
+const gameGUID = 'vHdsDqru3uoRKhyKuX4T';
+const gameEndPoint = `/games/${gameGUID}/scores/`;
+
+const addScoreEntry = async (scoreEntry) => {
+  return await postRequest(baseUrl+gameEndPoint, scoreEntry);
+}
+
+const getScoreEntry = async () => {
+  return await getResponse(baseUrl+gameEndPoint);
+}
+
+const displayList = (data) => {
+  const sortedData = data.result.sort((a,b) => a.score - b.score);
   const scoreBoardContainer = document.getElementById('scoreBoardContainer');
   scoreBoardContainer.innerHTML = '';
-  sortedData.forEach((item, id) => {
+  sortedData.forEach((item) => {
     scoreBoardContainer.innerHTML
       += `
-        <div id='scoreBoardItem' class='scoreBoardItem' ${id}>
-          <p>${item.name}</p>
+        <div id='scoreBoardItem' class='scoreBoardItem'>
+          <p>${item.user}</p>
           <p>${item.score}</p>
         </div>
       `;
   });
-  return sortedData;
 };
 
-export default displayList;
+export { displayList, addScoreEntry, getScoreEntry };
