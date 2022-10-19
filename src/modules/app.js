@@ -3,9 +3,9 @@ const displayList = (gameData) => {
   gameScore.innerHTML = '';
   gameData.sort((a, b) => b.score - a.score);
   gameData.forEach((item) => {
-    gameScore.innerHTML 
-    += `<p>${item.user} : ${item.score} </p>`
-});
+    gameScore.innerHTML
+    += `<p>${item.user} : ${item.score} </p>`;
+  });
 };
 
 export default displayList;
