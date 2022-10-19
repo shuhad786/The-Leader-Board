@@ -1,5 +1,5 @@
 import './styles.css';
-import { addEntry, getEntry } from './modules/useHTTP';
+import { addEntry, getEntry } from './modules/useHTTP.js';
 
 const refresh = document.querySelector('.refreshBtn');
 const form = document.querySelector('.entryContainer');

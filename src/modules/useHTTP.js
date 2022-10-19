@@ -1,4 +1,4 @@
-import displayList from './app.js'
+import displayList from './app.js';
 
 const addEntry = async (user, score) => {
   const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
@@ -7,7 +7,7 @@ const addEntry = async (user, score) => {
   const response = await fetch(`${url}${gameID}/scores/`, {
     method: 'POST',
     headers: { 'Content-type': 'application/json' },
-    body: JSON.stringify({user, score}),
+    body: JSON.stringify({ user, score }),
   });
   const res = await response.json();
   return res;
@@ -25,4 +25,3 @@ const getEntry = async () => {
 };
 
 export { addEntry, getEntry };
-
