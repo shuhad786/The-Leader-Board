@@ -1,4 +1,16 @@
 import './styles.css';
-import displayList from './modules/app.js';
+import { addEntry, getEntry } from './modules/useHTTP.js';
 
-displayList();
+const refresh = document.querySelector('.refreshBtn');
+const form = document.querySelector('.entryContainer');
+const nameValue = document.querySelector('.nameInput');
+const scoreValue = document.querySelector('.scoreInput');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  addEntry(nameValue.value, scoreValue.value);
+  document.querySelector('.nameInput').value = '';
+  document.querySelector('.scoreInput').value = '';
+});
+
+refresh.addEventListener('click', getEntry);
