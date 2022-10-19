@@ -1,26 +1,28 @@
-import { displayList } from './app.js';
+import displayList from './app.js'
 
-const postRequest = async (Endpoint, Body) => {
+const addEntry = async (user, score) => {
+  const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+  const url = `${baseUrl}games/`;
+  const gameID = 'Pk5uoKBoacOJcYrWGAJB';
+  const response = await fetch(`${url}${gameID}/scores/`, {
+    method: 'POST',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify({user, score}),
+  });
+  const res = await response.json();
+  return res;
+};
 
-	const response = await fetch(Endpoint, {
-		method: 'POST',
-		headers: { 'Content-type': 'application/json' },
-		body: JSON.stringify(Body),
-	});
-	const res = await response.json();
-  if (res.ok)
-	return response.json();	
-}
+const getEntry = async () => {
+  const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+  const url = `${baseUrl}games/`;
+  const gameID = 'Pk5uoKBoacOJcYrWGAJB';
+  const response = await fetch(`${url}${gameID}/scores/`);
+  const res = await response.json();
+  if (response.ok) {
+    displayList(res.result);
+  }
+};
 
-const getResponse = async (Endpoint) => {
-	try {
-		const response = await fetch(Endpoint)
-		const res = await response.json();
-    displayList(res);	
-	}  
-	catch (err) { 
-		throw new Error(err);
-	}
-}
+export { addEntry, getEntry };
 
-export { postRequest, getResponse };

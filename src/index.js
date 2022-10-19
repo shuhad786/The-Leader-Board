@@ -1,18 +1,16 @@
 import './styles.css';
-import { addScoreEntry, getScoreEntry } from './modules/app.js';
+import { addEntry, getEntry } from './modules/useHTTP';
 
-const nameInput = document.querySelector('.nameInput');
-const scoreInput = document.querySelector('.scoreInput');
-const form = document.querySelector('.entryContainer');
 const refresh = document.querySelector('.refreshBtn');
+const form = document.querySelector('.entryContainer');
+const nameValue = document.querySelector('.nameInput');
+const scoreValue = document.querySelector('.scoreInput');
 
-form.addEventListener('submit', (e) => { 
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const payloadInput = {user : nameInput.value, score: scoreInput.value};
-  addScoreEntry(payloadInput);
+  addEntry(nameValue.value, scoreValue.value);
+  document.querySelector('.nameInput').value = '';
+  document.querySelector('.scoreInput').value = '';
 });
 
-refresh.addEventListener('click', () => {
-  getScoreEntry();
-});
-
+refresh.addEventListener('click', getEntry);

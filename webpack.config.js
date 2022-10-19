@@ -3,40 +3,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  target: 'web',
+  entry: path.resolve(__dirname, 'src'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+  },
   devServer: {
     static: {
       directory: path.resolve(__dirname, 'dist'),
     },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
   },
-  entry: './src/index.js',
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'umd',
-  },
-  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: ['babel-loader'],
-      },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Leaderboard',
+      filename: 'index.html',
+      template: 'src/index.html',
+    }),
+  ],
 };

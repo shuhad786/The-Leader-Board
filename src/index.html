@@ -4,11 +4,7 @@
     <meta charset="utf-8" />
     <title>Leader Board</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script
-      src="https://kit.fontawesome.com/8a3c9493da.js"
-      crossorigin="anonymous"
-    ></script>
-    <script defer src="main.js"></script>
+    <script src="https://kit.fontawesome.com/8a3c9493da.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <h1 class="header" Heading="Leader Board">Leader Board</h1>
@@ -20,7 +16,8 @@
         </div>
         <div id="scoreBoardContainer" class="scoreBoardContainer"></div>
       </div>
-      <form method="post" class="entryContainer">
+
+      <form class="entryContainer">
         <h2 class="addYourScoreHeader">Add your score</h2>
         <input
           id="nameInput"
@@ -33,7 +30,7 @@
           id="scoreInput"
           name = "score"
           class="scoreInput"
-          type="integer"
+          type="number"
           placeholder="Your score here"
         />
         <button id="submitBtn" class="submitBtn" type="submit">Submit</button>
