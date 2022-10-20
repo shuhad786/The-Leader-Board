@@ -99,7 +99,7 @@ body {
   border: none;
   border-radius: 3px;
   background-color: #dedede;
-  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .scoreInput {
@@ -107,7 +107,7 @@ body {
   border: none;
   background-color: #dedede;
   border-radius: 3px;
-  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .submitBtn {
@@ -116,7 +116,7 @@ body {
   border: none;
   outline: none;
   color: #a7fbd0;
-  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .scoreBoardItem {
