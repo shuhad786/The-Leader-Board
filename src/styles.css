@@ -7,34 +7,57 @@
 body {
   margin: 0;
   padding: 3em;
+  background: #dedede;
 }
 
 .header {
   display: flex;
   font-weight: bold;
+  font-size: 3em;
   justify-content: center;
+  color: #dedede;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #75ffb7,
+    0 0 82px #75ffb7,
+    0 0 92px #75ffb7,
+    0 0 102px #75ffb7,
+    0 0 151px #75ffb7;
 }
 
 .page {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 56px;
+  background: #dedede;
+  box-shadow: 29px 29px 58px #c8c8c8, -29px -29px 58px #f4f4f4;
+  padding: 1em;
 }
 
 .scoreDisplay {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 20px;
+  background: #a7fbd0;
+  box-shadow: 29px 29px 58px #96e2bb, -29px -29px 58px #b8ffe5;
 }
 
 .scoreBoard {
   display: flex;
   align-items: center;
   gap: 1em;
+  padding: 0 1em 0 1em;
+  border-radius: 20px;
+  background: #a7fbd0;
+  box-shadow: 29px 29px 58px #96e2bb, -29px -29px 58px #b8ffe5;
 }
 
 .recentScoresHeader {
-  color: black;
+  color: #7a7a7aa4;
 }
 
 .refreshBtn {
@@ -42,6 +65,8 @@ body {
   border-radius: 5px;
   border: none;
   outline: none;
+  color: #a7fbd0;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .scoreBoardContainer {
@@ -54,26 +79,35 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  border: 3px solid black;
-  border-radius: 10px;
-  padding: 0.4em;
+  padding: 1em 1em 1em 1em;
   height: min-content;
+  border-radius: 20px;
+  background: #a7fbd0;
+  box-shadow: 29px 29px 58px #96e2bb, -29px -29px 58px #b8ffe5;
 }
 
 .addYourScoreHeader {
   color: black;
 }
 
+::placeholder {
+  color: #a7fbd0;
+}
+
 .nameInput {
-  color: black;
+  color: #a7fbd0;
   border: none;
-  border-bottom: black solid 2px;
+  border-radius: 3px;
+  background-color: #dedede;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .scoreInput {
-  color: black;
+  color: #a7fbd0;
   border: none;
-  border-bottom: black solid 2px;
+  background-color: #dedede;
+  border-radius: 3px;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .submitBtn {
@@ -81,12 +115,12 @@ body {
   border-radius: 5px;
   border: none;
   outline: none;
+  color: #a7fbd0;
+  box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .scoreBoardItem {
   display: flex;
-  border: solid black 2px;
-  width: 15em;
   justify-content: space-between;
   padding: 0.2em;
 }
